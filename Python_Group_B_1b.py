@@ -1,3 +1,12 @@
+"""
+b) Write a python program to store roll numbers of student array who attended training program in sorted order. 
+Write function for searching whether particular student attended training program or not, 
+using Binary search and Fibonacci search
+"""
+
+
+
+
 import string
 def menu_random():
     print("Enter 1 for Tterative Binary search.\nEnter 2 for Recursive Binary search.\nEnter 3 for left-to-right Fibonacci search\nEnter 4 for right-to-left Fibonacci search")
