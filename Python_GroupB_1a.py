@@ -71,10 +71,8 @@ def SentinelSearch(sen_array, stock, demand):
     assume = sen_array[stock - 1]
     sen_array[stock - 1] = demand
     supply = 0
-    while supply < (stock - 1):
-        if sen_array[supply] == demand:
-            return supply
-        supply += 1
+    while sen_array[supply]!=demand:
+           supply += 1
     sen_array[stock - 1]  = assume
     if (supply<(stock-1)) or assume == demand:
         return supply
