@@ -15,10 +15,10 @@ def menu_random():
 
 list_of_roll = []
 strength = int(input("Enter the strength of the class - "))
-key = int(input("Enter the roll no. to be searched -  "))
 while strength<1:
     print("Plss enter a valid strength of class.")
     strength = int(input("Enter the strength of the class - "))
+key = int(input("Enter the roll no. to be searched -  "))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
