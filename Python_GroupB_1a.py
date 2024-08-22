@@ -6,7 +6,7 @@ using Linear search and Sentinel search."""
 
 
 import string
-def menu_random():
+def menu():
     print(
         "Enter 1 for linear search without recursion.\nEnter 2 for linear search with recursion.\nEnter 3 for Sentinel search")
     # print("Enter 1 for Binary search.\nEnter 2 for Fibonacci search")
@@ -93,7 +93,7 @@ def consequence(function):
 
 
 list_of_roll = getroll(strength)
-menu_random()
+menu()
 choice = int(input("Enter choice - "))
 while choice not in (1, 2, 3):
     print("Pls enter appropriate choice - \n----------------------------------------------")
