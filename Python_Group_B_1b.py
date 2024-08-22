@@ -8,8 +8,8 @@ using Binary search and Fibonacci search
 
 
 import string
-def menu_random():
-    print("Enter 1 for Tterative Binary search.\nEnter 2 for Recursive Binary search.\nEnter 3 for left-to-right Fibonacci search\nEnter 4 for right-to-left Fibonacci search")
+def menu():
+    print("Enter 1 for Iterative Binary search.\nEnter 2 for Recursive Binary search.\nEnter 3 for left-to-right Fibonacci search\nEnter 4 for right-to-left Fibonacci search")
 menu_random()
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ def recursive_binary_search(bin_array, start_pos, end_pos, target):
 list_of_roll = getroll(strength)
 sorted_list = bubble_sort(list_of_roll)
 print(sorted_list)
-menu_random()
+menu()
 choice = int(input("Enter choice - "))
 while choice not in (1, 2, 3, 4):
     print("Pls enter appropriate choice - \n----------------------------------------------")
