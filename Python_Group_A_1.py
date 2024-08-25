@@ -110,8 +110,9 @@ while flag == 1:
 
     elif choice == 5:
         print("exit")
-        continue
         flag = 0
+        break
+        
 
     else:
         print(" invalid choice")
