@@ -35,7 +35,7 @@ def getroll(size):
     return array
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def bubble_sort(sorted_array):
+def selecion_sort(sorted_array):
     for compare in range(0,len(sorted_array),1):
         for iter in range(compare+1,len(sorted_array),1):
             if sorted_array[compare] > sorted_array[iter]:
@@ -164,7 +164,7 @@ def recursive_binary_search(bin_array, start_pos, end_pos, target):
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 list_of_roll = getroll(strength)
-sorted_list = bubble_sort(list_of_roll)
+sorted_list = selection_sort(list_of_roll)
 print(sorted_list)
 menu()
 choice = int(input("Enter choice - "))
