@@ -44,7 +44,7 @@ def selecion_sort(sorted_array):
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def coventional_fibonacchi_search(fib_array, records, target):
+def conventional_fibonacchi_search(fib_array, records, target):
     fib_n2 = 0
     fib_n1 = 1
     fib_n = fib_n1 + fib_n2
@@ -86,7 +86,7 @@ def coventional_fibonacchi_search(fib_array, records, target):
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def noncoventional_fibonacchi_search(fib_array, records, target):
+def nonconventional_fibonacchi_search(fib_array, records, target):
     fib_n2 = 0
     fib_n1 = 1
     fib_n = fib_n1 + fib_n2
@@ -188,14 +188,14 @@ while check:
             print("Key present at", search_result+1,"location of the list of roll numbers.")
 
     elif choice == 2:
-        search_result = coventional_fibonacchi_search(sorted_list,strength, key)
+        search_result = conventional_fibonacchi_search(sorted_list,strength, key)
         if search_result == -1:
             print("Key isn't present.")
         else:
             print("Key present at", search_result+1,"location of the list of roll numbers.")
 
     else:
-        search_result = noncoventional_fibonacchi_search(sorted_list,strength,key)
+        search_result = nonconventional_fibonacchi_search(sorted_list,strength,key)
         if search_result == -1:
             print("Key isn't present.")
         else:
