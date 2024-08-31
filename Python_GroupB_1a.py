@@ -7,7 +7,7 @@ using Linear search and Sentinel search."""
 
 import string
 import sys
-sys.setrecursionlimit(10000000)
+sys.setrecursionlimit(3000)
 
 def menu():
     print(
