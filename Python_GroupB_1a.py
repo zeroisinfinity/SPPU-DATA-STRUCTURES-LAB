@@ -6,6 +6,9 @@ using Linear search and Sentinel search."""
 
 
 import string
+import sys
+sys.setrecursionlimit(10000000)
+
 def menu():
     print(
         "Enter 1 for linear search without recursion.\nEnter 2 for linear search with recursion.\nEnter 3 for Sentinel search")
