@@ -9,7 +9,7 @@ using Binary search and Fibonacci search
 
 import string
 import sys
-sys.setrecursionlimit(10000000)
+sys.setrecursionlimit(3000)
 
 def menu():
     print("Enter 1 for Iterative Binary search.\nEnter 2 for Recursive Binary search.\nEnter 3 for left-to-right Fibonacci search\nEnter 4 for right-to-left Fibonacci search")
