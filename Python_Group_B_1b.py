@@ -88,7 +88,7 @@ def conventional_fibonacchi_search(fib_array, records, target):
             fib_n2 = fib_n - fib_n1
             index = min(fib_n2 + offset, records - 1)
         #Special  Case
-        if index<(records-1) and fib_array[records-1]:
+        if index<(records-1) and fib_array[records-1] == target:
             return records - 1
 
         else:
