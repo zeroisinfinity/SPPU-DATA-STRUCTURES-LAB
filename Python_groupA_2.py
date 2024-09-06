@@ -93,8 +93,8 @@ def hfreq(l):
     freq_list = []  # will store marks with freq > 1
     length = len(l)  # length of list
 
-    if absent(l)==no_of_stud: #Verifying if all are absent
-        return "All are absent."
+    if absent(l) == no_of_stud:  # Verifying if all are absent
+        print("All are absent.")
 
     #Iterating in NESTED-FOR LOOP because we concern about the particular element and not the list as a whole
     for i in range(length):
