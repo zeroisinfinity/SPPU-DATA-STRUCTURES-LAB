@@ -133,12 +133,12 @@ def low(l):
     if l[0]!=-1: #If unfortunately first element is -1
         lowest = l[0]
     else:
-        lowest = 999 #Standard
+        lowest = float('inf') #Standard
     for i in l:
         if i<lowest and i!= -1:
             lowest = i
     #If all are absent lowest shouldn't be -1
-    if lowest == 999:
+    if lowest == float('inf'):
         print("All are absent.")
     else:
         print("lowest marks is - ",lowest)
@@ -149,14 +149,14 @@ def high(l):
     if l[0]!=-1: #If unfortunately first element is -1
         highest = l[0]
     else:
-        highest = -999 #Standard
+        highest = float('-inf') #Standard
    
     for i in l:
         if i>highest and i!=-1:
            highest = i
            
     #If all are absent lowest shouldn't be -1 
-    if highest==-999:
+    if highest == float('-inf'):
        print("All are absent.") 
     
     #If everyone have Zero marks Highest≠Lowest                      
