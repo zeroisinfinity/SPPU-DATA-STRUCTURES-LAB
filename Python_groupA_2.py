@@ -9,10 +9,10 @@ Experiment Number 2 : Write a python program to store marks stored in subject "F
 
 
 
-
+import string
 #MENU function defined
 def menu():
-    print("Enter 1 for average function. \nEnter 2 for lowest mark function. \nEnter 3 for highest mark function. \nEnter 4 for highest frequency function.\nEnter 5 for absent function.")
+    print("Enter 1 for average function. \nEnter 2 for lowest mark function. \nEnter 3 for highest mark function. \nEnter 4 for highest frequency function.\nEnter 5 for absent function.\nEnter 6 to Exit.")
     
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Opting for exam 1)Insem - 30 , 2)Endsem - 70
@@ -202,12 +202,14 @@ while(check and no_of_stud!=0):
         
     elif choice==5:
         print("Absent no.of students - ", absent(list_of_marks))
+
+    else:
+        print("Thank you for using our program!")
+
         
-    
-    
     #Wanna continue then....yes 
     want = input("Want to continue ? if yes type yes otherwise no\n --- ")
-    
+    want = want.lower()
     while(want!="yes" and want!="no"):
         print("Enter yes or no only")
         want = input("Want to continue ? if yes type yes otherwise no\n --- ")
