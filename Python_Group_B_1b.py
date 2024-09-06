@@ -57,7 +57,7 @@ def partition(array, start_pos, end_pos):
         if inc >= dec:
             return dec
         array[inc] , array[dec] = array[dec] , array[inc]
-        #print(array)
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def conventional_fibonacchi_search(fib_array, records, target):
@@ -82,7 +82,6 @@ def conventional_fibonacchi_search(fib_array, records, target):
             fib_n2 = fib_n - fib_n1
             index = min(fib_n2 + offset, records - 1)
 
-
         elif fib_array[index] > target:
             fib_n = fib_n2
             fib_n1 = fib_n1 - fib_n2
@@ -95,10 +94,8 @@ def conventional_fibonacchi_search(fib_array, records, target):
         else:
             return index
 
-
     else:
         return -1
-
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -112,8 +109,8 @@ def nonconventional_fibonacchi_search(fib_array, records, target):
         fib_n1 = fib_n
         fib_n = fib_n1 + fib_n2
 
-    offset = records - 1
-    index = min(- fib_n2 + offset, records - 1)
+    offset = records
+    index = min( - fib_n2 + offset , records - 1)
     if fib_n == 1:
         return records - 1
     while fib_n != 1:
@@ -124,7 +121,6 @@ def nonconventional_fibonacchi_search(fib_array, records, target):
             fib_n2 = fib_n - fib_n1
             index = min(- fib_n2 + offset, records - 1)
 
-
         elif fib_array[index] < target:
             fib_n = fib_n2
             fib_n1 = fib_n1 - fib_n2
@@ -132,13 +128,11 @@ def nonconventional_fibonacchi_search(fib_array, records, target):
             index = min(- fib_n2 + offset, records - 1)
 
         #Special  Case
-        if index<(records-1) and fib_array[records-1]:
-            return records - 1
-
+        if index > 0 and fib_array[0] == target:
+            return 0
 
         else:
             return index
-
 
     else:
         return -1
