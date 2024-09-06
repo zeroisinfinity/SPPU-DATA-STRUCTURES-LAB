@@ -178,15 +178,16 @@ def absent(l):
     return absenty
     
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Declaring Check as TRUE                 
-check = True
-while(check and no_of_stud!=0):
+while(no_of_stud!=0):
     
     #Calling menu()
     menu()
     
     #Declaring Choice
     choice = int(input("Enter choice - "))
+    while 6 < choice or choice < 1:
+        print("Enter a valid choice!!!")
+        choice = int(input("Enter choice - "))
     
     if choice==1:
         avg(list_of_marks)
@@ -205,6 +206,7 @@ while(check and no_of_stud!=0):
 
     else:
         print("Thank you for using our program!")
+        break
 
         
     #Wanna continue then....yes 
@@ -216,8 +218,7 @@ while(check and no_of_stud!=0):
         
     if want=="no":
         print("Thank you for using our program!")
-        check = False #breaking loop
-        
+        break        
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
