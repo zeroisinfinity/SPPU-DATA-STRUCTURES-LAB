@@ -34,8 +34,9 @@ def CountFreq(my_string,char_freq):
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def longest_word(my_string):
-    start_pos = end_pos = length_holder = 0           #VERY FEW FUCNTION CALLS AND FASTER THAN USUAL CODE
+    start_pos = end_pos = length_holder = 0  # VERY FEW FUNCTION CALLS AND FASTER THAN USUAL CODE
     equal_holder = []
+    my_string+=" "
     for iter in range(0, len(my_string), 1):
         if my_string[iter] == ' ':
             if (iter - end_pos) > length_holder:
@@ -43,24 +44,26 @@ def longest_word(my_string):
                 length_holder = (iter - end_pos)
                 end_pos = iter + 1
                 start_pos = end_pos - 1
+                equal_holder.append(start_pos)
 
             elif (iter - end_pos) == length_holder:
                 length_holder = (iter - end_pos)
                 end_pos = iter + 1
+                equal_holder.append(start_pos)
                 start_pos = end_pos - 1
                 equal_holder.append(start_pos)
 
             else:
                 end_pos = iter + 1
 
-    if (iter + 1) - end_pos > length_holder:
-        print('Longest word is -',my_string[end_pos: iter + 1])
+    if len(equal_holder) == 0:
+        print("longest word is -",my_string[start_pos : start_pos + length_holder + 1])
     else:
         compress = []
+        equal_holder = set(equal_holder)
         for measure in equal_holder:
             compress.append(my_string[measure - length_holder: measure])
-            #print('longest words are -',my_string[start_pos - length_holder: start_pos])
-        print("Longest words are - ",set(compress))
+        print("Longest words are -", set(compress))
 
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
