@@ -71,12 +71,11 @@ while(i<end):
 def avg(l):
     total = 0
     studs = no_of_stud
-    if(no_of_stud!=0):
-        for i in l:
-            if i == -1:
-                studs-=1
-            else:
-                total+=i
+    for i in l:
+        if i == -1:
+            studs-=1
+        else:
+            total+=i
     #If students aren't zero
     if studs!=0:
        print("Average of class is - ",total//studs)
