@@ -55,10 +55,13 @@ void LinkedList :: insert_at_location(int value , int location){ //bracket-1
 		Node* ll_holder = Head;
 		
 		//IF LINKEDLIST IS EMPTY
-		for(int iter = 0; iter < (location - 1 && ll_holder ) ; ++iter){//bracket-4
+		for(int iter = 0; iter < (location - 1 ) && ll_holder ; ++iter){//bracket-4
 				ll_holder = ll_holder -> next;
 			}//bracket-4
 
+		arg_node -> next = ll_holder -> next;
+		ll_holder -> next = arg_node;
+		
                 
         if(!ll_holder){//b-4
                 cout<<"Location out of range."<<endl;
@@ -111,7 +114,7 @@ int main() {
     // Insert element at a specific position
     list1.insert_at_location(15, 3);
 
-    cout << "Linked list after insertions: ";
+    cout << "Linked list after insertions: "<<endl;
     list1.display_LL();
 return 0;
 }
