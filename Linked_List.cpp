@@ -19,7 +19,7 @@ class LinkedList{
 			void insert_at_end(int value);
 			void del_from_start(void);
 			void del_from_end(void);
-			void del_from_location(void);
+			void del_from_location(int location);
 			void display_LL(void);
 			
 };
@@ -100,6 +100,32 @@ void LinkedList :: display_LL(void){//b1
         
 }//b1
 
+
+void LinkedList::del_from_start(void){//b1
+		Node* ll_holder = Head -> next;
+		free(Head); 
+		Head = ll_holder;
+		
+}//b1
+			
+void LinkedList :: del_from_location(int location){//b1
+		
+		if(!Head){//b2
+		  	return del_from_start();
+		}//b2
+		Node* ll_holder = Head;
+		for(int travs = 0 ; travs < (location - 1) && ll_holder ; travs++){//b3 
+			ll_holder = ll_holder -> next;
+			}//b3
+		if(!ll_holder){//b3
+			cout<<"out of range"<<endl;
+		}//b3
+		Node* fake_node;
+		fake_node -> next = ll_holder -> next;
+		ll_holder = fake_node -> next;
+		//free(fake_node);
+		}//b1
+
 int main() {
     // Initialize a new linked list
     LinkedList list1;
@@ -113,6 +139,8 @@ int main() {
 
     // Insert element at a specific position
     list1.insert_at_location(15, 3);
+	list1.del_from_start();
+	list1.del_from_location(2);
 
     cout << "Linked list after insertions: "<<endl;
     list1.display_LL();
