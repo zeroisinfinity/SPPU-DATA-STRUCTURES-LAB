@@ -86,6 +86,14 @@ void LinkedList :: insert_at_end(int value){//b1
         ll_holder -> next = arg_node;
 }//b1
 
+void LinkedList :: del_from_end(void){//b1
+		Node* ll_holder = Head;
+		
+		//IF LINKEDLIST IS EMPTY
+		while(!ll_holder){//bracket-4
+				ll_holder = ll_holder -> next;
+			}//bracket-4
+		
 void LinkedList :: display_LL(void){//b1
 
         if(!Head){//b2
