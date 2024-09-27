@@ -7,8 +7,6 @@ class Node{//b1
 		string name;
 		Node* next;
 		Node(int PRN, string name){//b2
-			cin>>PRN;
-			cin>>name;
 			this->PRN = PRN;
 			this->name = name;
 			next = NULL;
@@ -18,20 +16,32 @@ class Node{//b1
 class Pinnacle{//b1
 
 		public:
-			Node* head;
-			int records;
+			Node* prez;
+			int div_size;
 			Pinnacle(){//b2
-				head = NULL;
+				prez = NULL;
 			}//b2
 			
-			void insert_at_start(int value);
-			void insert_at_location(int value, int location);
-			void insert_at_end(int value);
-			void del_from_start(void);
-			void del_from_end(void);
-			void del_from_location(int location);
-			void display_LL(void);
+			void appoint_prez(int value,string data);
+			void appoint_memb(int value , string data, int location);
+			void appoint_sect(int value , string data);
+			void remove_prez(void);
+			void remove_memb(int location);
+			void remove_sect(void);
+			void display_div(void);
 }; //b1
 
-void Pinnacle :: insert_at_start(int value){//b1
+void Pinnacle :: appoint_prez(int value,string data){//b1
+
+			Node* arg_node;
+			arg_node = new Node(value,data);
+			prez = arg_node;
+			
 			}//b1
+		
+void Pinnacle ::appoint_memb(int value , string data ,int location){//b1
+
+			if(location<=1){//b2
+				cout<<"Location should be greater than 1."<<endl;
+					}//b2
+				}//b1
