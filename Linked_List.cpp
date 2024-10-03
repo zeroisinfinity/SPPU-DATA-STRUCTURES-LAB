@@ -51,7 +51,7 @@ class LinkedList{
 
 
 
-void LinkedList::insert_at_location(int value , int location){ //b-1 
+void LinkedList :: insert_at_location(int value , int location){ //b-1 
 		
 		//IF LOCATION IS < 1
 		if(location < 1){//b-2
@@ -88,7 +88,7 @@ void LinkedList::insert_at_location(int value , int location){ //b-1
         
 }//b-1
 
-void LinkedList::insert_at_end(int value){//b1
+void LinkedList :: insert_at_end(int value){//b1
         
         Node* arg_node = new Node;
         arg_node -> data = value;
@@ -109,7 +109,7 @@ void LinkedList::insert_at_end(int value){//b1
 }//b1
 
 
-void LinkedList::display_LL(void){//b1
+void LinkedList :: display_LL(void){//b1
 
         if(!Head){//b2
             cout<<"List is empty"<<endl;
@@ -128,7 +128,7 @@ void LinkedList::display_LL(void){//b1
 
 
 			
-void LinkedList::del_from_location(int location){//b1
+void LinkedList :: del_from_location(int location){//b1
 		
 		if(!Head){//b2
 		  	return del_from_start();
@@ -148,7 +148,7 @@ void LinkedList::del_from_location(int location){//b1
 
 
 
-void LinkedList::del_from_end(void){//b1
+void LinkedList :: del_from_end(void){//b1
 		if(!Head){//b2
 			cout<<"List is empty"<<endl;
 		}//b2
@@ -173,11 +173,11 @@ int main(){
     /*list1.insert_at_end(22);
     list1.insert_at_end(13);
     list1.insert_at_end(23);
-    list1.insert_at_start(5);
+    list1.insert_at_start(5);*/
 	list1.insert_at_start(50);
-    list1.insert_at_start(500);
-    list1.insert_at_start(5000);
-    list1.insert_at_start(500000);
+    //list1.insert_at_start(500);
+    //list1.insert_at_start(5000);
+    /*list1.insert_at_start(500000);
 
 	
     list1.insert_at_location(15, 78979);
@@ -187,7 +187,7 @@ int main(){
     list1.insert_at_location(189, 3);
 
 	
-    /*list1.del_from_start();*/
+    list1.del_from_start();
     list1.del_from_location(3);
     //list1.del_from_end();
 	
