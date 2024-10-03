@@ -3,10 +3,21 @@ using namespace std;
 
 //struct NODE
 struct Node{
+		//Node* next;              //DOESN'T AFFECT COZ POINTER IS USED IN CODE ONLY WHEN STRUCT IS COMPLETELY DEFINED.
 		int data;
 		Node* next;
-		};
-		
+};
+
+
+
+  /*Memory Layout
+	The actual memory layout of your Node struct would look like this:
+	+-----------+-----------+---------------------------------+
+	| data (4Bytes) | padding (4Bytes) | next pointer (8Bytes)|
+	+-----------+-----------+---------------------------------+
+*/
+
+
 class LinkedList{
 
 		public:
@@ -14,59 +25,68 @@ class LinkedList{
 			LinkedList():Head(NULL){};
 			
 
-			void insert_at_start(int value);
+			void insert_at_start(int value){ //b-1
+					Node* arg_node;
+					arg_node = new Node();
+					cout<<"arg_node at start - "<<arg_node<<endl;
+					arg_node -> data = value;
+					arg_node -> next = Head;
+					Head = arg_node;
+		
+			}//b-1
 			void insert_at_location(int value, int location);
+
 			void insert_at_end(int value);
-			void del_from_start(void);
+			void del_from_start(void){//b1
+					Node* ll_holder = Head -> next;
+					delete Head; 
+					Head = ll_holder;
+			}//b1
+			
 			void del_from_end(void);
 			void del_from_location(int location);
 			void display_LL(void);
 			
 };
 
-void LinkedList :: insert_at_start(int value){ //bracket-1
 
 
-		Node* arg_node;
-		arg_node = new Node();
-		arg_node -> data = value;
-		arg_node -> next = Head;
-		Head = arg_node;
-		
-}//bracket-1
-
-void LinkedList :: insert_at_location(int value , int location){ //bracket-1 
+void LinkedList :: insert_at_location(int value , int location){ //b-1 
 		
 		//IF LOCATION IS < 1
-		if(location < 1){//bracket-2
+		if(location < 1){//b-2
 				cout<<"Location should be greater than or equal to 1"<<endl;
 				return ;
                 
-}//bracket-2
+}//b-2
 		
 		//IF LOCATION IS 1
-		if(location == 1){//bracket-3 
+		if(location == 1){//b-3 
 				insert_at_start(value);
 				return;
-}//bracket-3
+}//b-3
 		Node* arg_node = new Node();
 		arg_node -> data = value;
 		//arg_node -> next = Head;
 		Node* ll_holder = Head;
 		
 
-		for(int iter = 0; iter < (location - 1 ) && ll_holder ; ++iter){//bracket-4
+		for(int iter = 1; iter < (location - 1 ) && ll_holder ; ++iter){//b-4
 				ll_holder = ll_holder -> next;
-			}//bracket-4
+			}//b-4
+
+		if(!ll_holder){//b-5
+                cout<<"Location out of range."<<endl;
+				return ; 
+            }//b-5
 
 		arg_node -> next = ll_holder -> next;
 		ll_holder -> next = arg_node;
-		
+		cout<<"arg_node at location - "<<arg_node<<endl;
+
                 
-        if(!ll_holder){//b-5
-                cout<<"Location out of range."<<endl;
-            }//b-5
-}//bracket-1
+        
+}//b-1
 
 void LinkedList :: insert_at_end(int value){//b1
         
@@ -84,6 +104,8 @@ void LinkedList :: insert_at_end(int value){//b1
             ll_holder = ll_holder -> next;
             }//b3
         ll_holder -> next = arg_node;
+		cout<<"arg_node at end - "<<arg_node<<endl;
+
 }//b1
 
 
@@ -97,17 +119,14 @@ void LinkedList :: display_LL(void){//b1
         while(ll_holder){//b2
             cout<<ll_holder -> data<<endl;
             ll_holder = ll_holder -> next;
+			cout<<"node display - "<<ll_holder<<endl;
+
             }//b2
         
 }//b1
 
 
-void LinkedList :: del_from_start(void){//b1
-		Node* ll_holder = Head -> next;
-		delete Head; 
-		Head = ll_holder;
-		
-}//b1
+
 			
 void LinkedList :: del_from_location(int location){//b1
 		
@@ -115,7 +134,7 @@ void LinkedList :: del_from_location(int location){//b1
 		  	return del_from_start();
 		}//b2
 		Node* ll_holder = Head;
-		for(int travs = 0 ; travs < (location - 1) && ll_holder ; travs++){//b3 
+		for(int travs = 1 ; travs < (location - 1) && ll_holder ; travs++){//b3 
 			ll_holder = ll_holder -> next;
 			}//b3
 		if(!ll_holder){//b4
@@ -126,6 +145,9 @@ void LinkedList :: del_from_location(int location){//b1
 		delete ll_holder->next;
 		ll_holder -> next = fake_node;
 }//b1
+
+
+
 void LinkedList :: del_from_end(void){//b1
 		if(!Head){//b2
 			cout<<"List is empty"<<endl;
@@ -148,19 +170,30 @@ int main(){
     list1.insert_at_end(11);
     list1.insert_at_end(21);
     list1.insert_at_end(12);
-    list1.insert_at_end(22);
+    /*list1.insert_at_end(22);
     list1.insert_at_end(13);
     list1.insert_at_end(23);
     list1.insert_at_start(5);
+	list1.insert_at_start(50);
+    list1.insert_at_start(500);
+    list1.insert_at_start(5000);
+    list1.insert_at_start(500000);
+
 	
-    list1.insert_at_location(15, 3);
+    list1.insert_at_location(15, 78979);
+	list1.insert_at_location(155, 5);
+    list1.insert_at_location(145, 2);
+    list1.insert_at_location(109, 9);*/
+    list1.insert_at_location(189, 3);
+
 	
-    list1.del_from_start();
-    list1.del_from_location(2);
-    list1.del_from_end();
+    /*list1.del_from_start();*/
+    list1.del_from_location(3);
+    //list1.del_from_end();
 	
     cout << "Linked list after insertions: "<<endl;
 	
     list1.display_LL();
+	
 	return 0;
 }
