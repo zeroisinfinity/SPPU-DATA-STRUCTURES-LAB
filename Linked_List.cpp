@@ -88,7 +88,7 @@ void LinkedList :: insert_at_location(int value , int location){ //b-1
         
 }//b-1
 
-void LinkedList :: insert_at_end(int value){//b1
+void LinkedList::insert_at_end(int value){//b1
         
         Node* arg_node = new Node;
         arg_node -> data = value;
