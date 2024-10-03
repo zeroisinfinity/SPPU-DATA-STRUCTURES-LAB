@@ -102,7 +102,7 @@ void LinkedList :: display_LL(void){//b1
 }//b1
 
 
-void LinkedList::del_from_start(void){//b1
+void LinkedList :: del_from_start(void){//b1
 		Node* ll_holder = Head -> next;
 		delete Head; 
 		Head = ll_holder;
