@@ -122,8 +122,9 @@ void LinkedList :: del_from_location(int location){//b1
 			cout<<"out of range"<<endl;
 		}//b4
 		Node* fake_node;
-		fake_node -> next = ll_holder -> next;
-		ll_holder = fake_node -> next;
+		fake_node = ll_holder -> next -> next;
+		delete ll_holder->next;
+		ll_holder -> next = fake_node;
 }//b1
 void LinkedList :: del_from_end(void){//b1
 		if(!Head){//b2
