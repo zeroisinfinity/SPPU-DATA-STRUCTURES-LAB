@@ -51,7 +51,7 @@ class LinkedList{
 
 
 
-void LinkedList :: insert_at_location(int value , int location){ //b-1 
+void LinkedList::insert_at_location(int value , int location){ //b-1 
 		
 		//IF LOCATION IS < 1
 		if(location < 1){//b-2
@@ -109,7 +109,7 @@ void LinkedList::insert_at_end(int value){//b1
 }//b1
 
 
-void LinkedList :: display_LL(void){//b1
+void LinkedList::display_LL(void){//b1
 
         if(!Head){//b2
             cout<<"List is empty"<<endl;
@@ -128,7 +128,7 @@ void LinkedList :: display_LL(void){//b1
 
 
 			
-void LinkedList :: del_from_location(int location){//b1
+void LinkedList::del_from_location(int location){//b1
 		
 		if(!Head){//b2
 		  	return del_from_start();
@@ -148,7 +148,7 @@ void LinkedList :: del_from_location(int location){//b1
 
 
 
-void LinkedList :: del_from_end(void){//b1
+void LinkedList::del_from_end(void){//b1
 		if(!Head){//b2
 			cout<<"List is empty"<<endl;
 		}//b2
