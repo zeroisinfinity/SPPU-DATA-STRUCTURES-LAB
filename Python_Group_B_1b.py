@@ -115,7 +115,10 @@ def nonconventional_fibonacchi_search(fib_array, records, target):
     offset = records
     index = min( - fib_n2 + offset , records - 1)
     if fib_n == 1:
-        return records - 1
+        if fib_array[records-1]==target:
+           return records - 1
+        else:
+            return -1
     while fib_n != 1:
         if fib_array[index] > target:
             offset = index
