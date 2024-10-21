@@ -1,16 +1,14 @@
 def selection_sort(array):
-
-    for iter in range(0,len(array),1):
-        current_min = array[iter]
-        for compare in range(iter+1,len(array),1):
-            if current_min > array[compare]:
-                current_min = array[compare]
-                array[compare], array[iter] = array[iter] , current_min
+    for iter in range(0, len(array), 1):
+        min_index = iter
+        for compare in range(iter + 1, len(array), 1):
+            if array[compare] < array[min_index]:
+                min_index = compare
+        # Swap the found minimum element with the current element
+        array[iter], array[min_index] = array[min_index], array[iter]
     return array
 
-sel_array = [9,7,6,5,4,2,7,8,9,2,5] + [900]*800
-#sel_array = [9]
-#sel_array = []
+# Test arrays
+sel_array = [9, 7, 6, 5, 4, 2, 7, 8, 9, 2, 5] + [900] * 800
 
 print(selection_sort(sel_array))
-
