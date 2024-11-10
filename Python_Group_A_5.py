@@ -9,14 +9,13 @@
 """
 
 import string
-
+import math
 def palindrome(my_string):
-    for search in range(0, len(my_string), 1):
+    for search in range(0, math.ceil(len(my_string)/2), 1):
         if my_string.lower()[search] == my_string.lower()[-1 - search]:
             continue
         else:
             return "Given string is not a palindrome."
-            break
     else:
         return "Given string is a palindrome."
 
