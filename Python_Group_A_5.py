@@ -54,7 +54,7 @@ def longest_word(my_string):
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def first_index(my_string, sub_string):
-    my_string = my_string.lower()                  #FOUR TIMES FASTER THAN USUAL CODE
+    my_string = my_string.lower()                 
     sub_string = sub_string.lower()
     len_of_substr = len(sub_string)
     len_of_mystr = len(my_string)
