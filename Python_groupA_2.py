@@ -9,7 +9,6 @@ Experiment Number 2 : Write a python program to store marks stored in subject "F
 
 
 
-import string
 #MENU function defined
 def menu():
     print("Enter 1 for average function. \nEnter 2 for lowest mark function. \nEnter 3 for highest mark function. \nEnter 4 for highest frequency function.\nEnter 5 for absent function.\nEnter 6 to Exit.")
@@ -24,16 +23,16 @@ option = int(input("Enter choice - "))
 
 
 #While loop if choice is invalid
-while(option != 2 and option != 1):
+while option != 2 and option != 1:
     print("Enter valid choice")    
     option  = int(input("Enter choice - "))
     
 
 #Declaring limit_of_marks as ZERO
 limit_of_marks  = 0        
-if(option == 1):
+if option == 1:
         limit_of_marks = 30 #If insem
-elif(option == 2):
+elif option == 2:
         limit_of_marks = 70 #If endsem
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -42,7 +41,7 @@ no_of_stud = int(input("Enter class strength -  "))
 
 
 #While loop if entered negative .... could've affected upcoming marks filling while loop
-while(no_of_stud<0):
+while no_of_stud<0:
     print("Enter a valid strength.")
     no_of_stud = int(input("Enter class strength -  "))
     
@@ -55,11 +54,11 @@ end = no_of_stud
 
 #Declaring i as to iterate loop
 i = 0
-while(i<end):
+while i<end:
     #Declaring marks
     marks = int(input("Enter the marks of "+str(i+1)+" student - "))
     #Imp condition to avoid invalid marks
-    if(marks<=limit_of_marks and marks>=0) or marks==-1:
+    if marks<=limit_of_marks and marks>=0 or marks==-1:
         list_of_marks.append(marks) #Append only when valid
         i+=1 #increament i only then
     else:
@@ -71,17 +70,17 @@ while(i<end):
 def avg(l):
     total = 0
     studs = no_of_stud
-    for i in l:
-        if i == -1:
+    for score in l:
+        if score == -1:
             studs-=1
         else:
-            total+=i
+            total+=score
     #If students aren't zero
     if studs!=0:
        print("Average of class is - ",total//studs)
        
     #If all are absent so to avoid division by zero error           
-    if studs==0 and total==0:
+    if studs==0:
        print("No average because all students are absent.")
             
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -177,7 +176,7 @@ def absent(l):
     return absenty
     
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-while(no_of_stud!=0):
+while no_of_stud!=0:
     
     #Calling menu()
     menu()
@@ -211,7 +210,7 @@ while(no_of_stud!=0):
     #Wanna continue then....yes 
     want = input("Want to continue ? if yes type yes otherwise no\n --- ")
     want = want.lower()
-    while(want!="yes" and want!="no"):
+    while want!="yes" and want!="no":
         print("Enter yes or no only")
         want = input("Want to continue ? if yes type yes otherwise no\n --- ")
         

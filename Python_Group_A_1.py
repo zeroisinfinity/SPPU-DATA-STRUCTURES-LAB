@@ -8,7 +8,6 @@
 
 
 """
-import string
 
 cricket = []
 football = []
@@ -17,15 +16,18 @@ badminton = []
 
 def inp(l, size, sport):
     print("Students playing", sport, "- ")
-    while (size > 0):
 
-        roll = int(input("Enter student roll number - "))
-        if roll in l or 0 >= roll:
-            print("Please enter a valid roll no.")
-            pass
+    while size > 0:
+        roll = input("Enter student roll number - ")
+        if roll.isnumeric():
+            roll = int(roll)
+            if roll in l or 0 >= roll:
+                print("Please enter a valid roll no.")
+            else:
+                l.append(roll)
+                size -= 1
         else:
-            l.append(roll)
-            size -= 1
+            print('Enter a numeric value please!')
     print(l)
 
 
@@ -58,7 +60,7 @@ def union(l1, l2):
 diff_set = []
 
 
-def diffrence(l1, l2):
+def difference(l1, l2):
     for i in l1:
         if i not in l2:
             diff_set.append(i)
@@ -67,17 +69,17 @@ def diffrence(l1, l2):
 flag = 1
 while flag == 1:
     print("\n\n--------------------MENU--------------------\n")
-    print("1. List of student who play cricet and badminton")
-    print("2.List of student who play either cricet or badminton but not both ")
-    print("3. Number of Students who play neither cricet nor badminton")
-    print("4. Number of Students who play cricet or football but not badminton")
+    print("1. List of student who play cricket and badminton")
+    print("2.List of student who play either cricket or badminton but not both ")
+    print("3. Number of Students who play neither cricket nor badminton")
+    print("4. Number of Students who play cricket or football but not badminton")
     print("5. Exit\n")
     choice = int(input("Enter your Choice (from 1 to 5) :"))
 
     if choice == 1:
         intersection_set = []
         intersection(cricket, badminton)
-        print("List of student who play cricet and badminton", intersection_set)
+        print("List of student who play cricket and badminton", intersection_set)
 
     elif choice == 2:
         union_set = []
@@ -85,16 +87,16 @@ while flag == 1:
         intersection_set = []
         intersection(cricket, badminton)
         diff_set = []
-        diffrence(union_set, intersection_set)
-        print("List of student who play either cricet or badminton but not both", diff_set)
+        difference(union_set, intersection_set)
+        print("List of student who play either cricket or badminton but not both", diff_set)
 
     elif choice == 3:
         union_set = []
         union(cricket, badminton)
         diff_set = []
-        diffrence(football, union_set)
+        difference(football, union_set)
         num = len(diff_set)
-        print("List of Students who play neither cricet nor badminton ", diff_set, " number ", num)
+        print("List of Students who play neither cricket nor badminton ", diff_set, " number ", num)
 
 
 
@@ -104,9 +106,9 @@ while flag == 1:
         intersection(cricket, football)
 
         diff_set = []
-        diffrence(intersection_set, badminton)
+        difference(intersection_set, badminton)
         num = len(diff_set)
-        print("List of Students who play cricet and football but notbadminton", diff_set, " number ", num)
+        print("List of Students who play cricket and football but not badminton", diff_set, " number ", num)
 
 
     elif choice == 5:

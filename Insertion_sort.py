@@ -2,11 +2,11 @@ def insertion_sort(array):
 
     for test_sub in range(1,len(array),1):
             sample = array[test_sub]
-            compare = test_sub - 1
-            while compare >= 0 and sample < array[compare]:
-                array[compare + 1] = array[compare]
-                compare -= 1
-            array[compare+1] = sample
+            cf = test_sub - 1
+            while cf >= 0 and sample < array[cf]:
+                array[cf + 1] = array[cf]
+                cf -= 1
+            array[cf+1] = sample
     return array
 
 

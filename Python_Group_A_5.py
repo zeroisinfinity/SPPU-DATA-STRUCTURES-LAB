@@ -8,12 +8,13 @@
 
 """
 
-import string
-import math
 def palindrome(my_string):
-    for search in range(0, math.ceil(len(my_string)/2), 1):
-        if my_string.lower()[search] == my_string.lower()[-1 - search]:
-            continue
+    my_string = my_string.lower()
+    length = len(my_string)
+    search = 0
+    while search <= length//2:
+        if my_string[search] == my_string[-1 - search]:
+            search += 1
         else:
             return "Given string is not a palindrome."
     else:
@@ -21,7 +22,7 @@ def palindrome(my_string):
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def CountFreq(my_string, char_freq):
+def count_freq(my_string, char_freq):
     freq = 0
     my_string = my_string.lower()
     for i in range(len(my_string)):
@@ -33,22 +34,22 @@ def CountFreq(my_string, char_freq):
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def longest_word(my_string):
-    longest_word = ""
+    long_word = ""
     current_word = ""
     
     for char in my_string:
         if char != ' ':
             current_word += char
         else:
-            if len(current_word) > len(longest_word):
-                longest_word = current_word
+            if len(current_word) > len(long_word):
+                long_word = current_word
             current_word = ""
     
     # Check the last word if the string doesn't end with a space
-    if len(current_word) > len(longest_word):
-        longest_word = current_word
+    if len(current_word) > len(long_word):
+        long_word = current_word
     
-    print("Longest word is:", longest_word)
+    print("Longest word is:", long_word)
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +73,7 @@ def first_index(my_string, sub_string):
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-def occurence(my_string):
+def occurrence(my_string):
     my_string = my_string + " "
     current_word = ''
     process_list = []
@@ -102,7 +103,7 @@ def menu():
 
 test_str = input("Enter the string: ")
 check = True
-while(check and len(test_str) != 0):
+while check and len(test_str) != 0:
     menu()
     choice = int(input("Enter choice: "))
 
@@ -121,14 +122,14 @@ while(check and len(test_str) != 0):
         print(first_index(test_str, substr))
         
     elif choice == 4:
-        print(occurence(test_str))
+        print(occurrence(test_str))
 
     else:
         charac = input("Enter the character: ")
-        print(CountFreq(test_str, charac))
+        print(count_freq(test_str, charac))
 
     want = input("Want to continue? If yes type 'yes', otherwise type 'no':\n --- ")
-    while(want.lower() != "yes" and want.lower() != "no"):
+    while want.lower() != "yes" and want.lower() != "no":
         print("Enter 'yes' or 'no' only.")
         want = input("Want to continue? If yes type 'yes', otherwise type 'no':\n --- ")
     if want.lower() == "no":

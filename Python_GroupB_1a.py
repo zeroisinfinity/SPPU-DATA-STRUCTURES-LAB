@@ -5,7 +5,6 @@ using Linear search and Sentinel search."""
 
 
 
-import string
 import sys
 sys.setrecursionlimit(3000)
 
@@ -52,7 +51,6 @@ def LinearSearchWithoutRecursion(case, end , recursive_tracker):
     for compare in range(0, len(case), 1):
         if end == case[compare]:
             return compare
-            break
     else:
         return -1
 
@@ -86,7 +84,7 @@ def SentinelSearch(sen_array, stock, demand):
 
 
 def consequence(function):
-    linear_result = function(list_of_roll, key, recursive_tracker)
+    linear_result = function(list_of_roll, key, recursive_tracker )
     if linear_result != -1:
         print("Student is present at",linear_result+1,"location in list of roll number.")
     else:
@@ -116,7 +114,7 @@ while check:
             print("Key present at",search_result+1,"location of the list of roll numbers.")
 
     to_continue = input("Want to continue?\nyes or no - ")
-    while (to_continue.lower() not in ("yes", "no")):
+    while to_continue.lower() not in ("yes", "no"):
         print("ENTER ONLY YES OR NO\n--------------------------------------------------")
         to_continue = input("Want to continue?\nyes or no - ")
 
