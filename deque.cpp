@@ -12,7 +12,7 @@ class Deque{//b1
           }//b2
           
           bool isempty(void){//b3
-          
+
                 if(front == -1){//b4
                     return true;
                 }//b4
@@ -24,7 +24,7 @@ class Deque{//b1
           }//b3
           
           bool isfull(void){//b6
-          
+
                 if((rear + 1)%MAX == front){//b7
                     return true;
                 }//b7
@@ -59,6 +59,9 @@ class Deque{//b1
           
                 if(isempty()){//b10
                     front++;
+                    rear++;
+                    de_que[rear] = val;
+                    return;
                 }//b10
                 
                 else if(isfull()){//b11
@@ -81,6 +84,7 @@ class Deque{//b1
                 if(front == rear){//b15
                       front = -1;
                       rear = -1;
+                      return;
                       
                 }//b15
               
@@ -99,10 +103,12 @@ class Deque{//b1
                 if(front == rear){//b15
                       front = -1;
                       rear = -1;
+                      return;
                       
                 }//b15
                 else if(rear == 0){
                       rear = MAX - 1;
+                      return;
                 }
                 
                 rear--;
@@ -115,6 +121,7 @@ class Deque{//b1
                 for(int trav = 0 ; trav < MAX ; trav++){//b18
                     cout<<"de_que["<<trav<<"] -- "<<de_que[trav]<<endl;
                 }//b18
+                cout<<"front --> "<<front<<"   "<<"rear --> "<<rear<<endl;
           }//b17
           
           
@@ -128,20 +135,24 @@ int main(){//b20
               cin>>choice;
               switch(choice){
                   case 1:
-                        cout<<"val";
+                        cout<<"val --- ";
                         cin>>val;
                         dq.insert_front(val);
+                        cout<<"front --> "<<front<<"   "<<"rear --> "<<rear<<endl;
                         break;
                   case 2:
-                        cout<<"val";
+                        cout<<"val --- ";
                         cin>>val;
                         dq.insert_rear(val);
+                        cout<<"front --> "<<front<<"   "<<"rear --> "<<rear<<endl;
                         break;
                   case 3:
                         dq.del_front();
+                        cout<<"front"<<dq.front<<"   "<<"rear"<<dq.rear<<endl;
                         break;
                   case 4:
                         dq.del_rear();
+                        cout<<"front --> "<<front<<"   "<<"rear --> "<<rear<<endl;
                         break;
                   case 5:
                         dq.display();
