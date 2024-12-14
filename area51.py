@@ -1,13 +1,17 @@
-s = ''
-for i in range(300):
-    if i < 150:
-        s += '([{'
-    else:
-        s+="}])"
 
+def hfreq(l):
+    count_ini = 1
+    highest = l[0]
+    for i in range(len(l)):
+        count_dyn = 1
+        for j in range(i+1,len(l)):
+            if l[i] == l[j]:
+                count_dyn += 1
 
-def fact(n):
-    return n*(lambda x : fact(x - 1) if x>1 else 1)(n)
-n = 6
-fact = (lambda x : x*fact(x - 1) if x>1 else 1)
-print(fact(n))
+        if count_ini<count_dyn:
+            count_ini = count_dyn
+            highest = l[j]
+    return highest
+
+print(hfreq([22,33,33,33,44,44,44,44]))
+

@@ -61,6 +61,9 @@ class Job_queue{//b1
                     rear = -1;
                 }//b14
                 front ++;
+                for(int i = 1; i <= rear ; i++){
+                      queue[i - 1] = queue[i];
+                } 
                 return deleted_job;
           }//b12
           
